@@ -8,7 +8,7 @@ wget http://maven.twttr.com/ua_parser/ua-parser/1.3.0/ua-parser-1.3.0.jar
 mvn install:install-file -Dfile=ua-parser-1.3.0.jar -DgroupId=ua_parser -DartifactId=ua-parser -Dpackaging=jar -Dversion=1.3.0
 
 # Build flume
-mvn clean install -DskipTests
+mvn -Phadoop-2 clean install -DskipTests
 
 # Discover the path of the local maven cache
 MAVEN_LOCAL_REPO=`mvn help:evaluate -Dexpression=settings.localRepository | egrep -v '[INFO]|Download'`
